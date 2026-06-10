@@ -12,20 +12,34 @@ export function LogoFull() {
   )
 }
 
+export function LogoLogin() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
+      <img src={GRC_LOGO} alt="GRC Solutions" style={{ height: 44, width: 'auto' }} />
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 4 }}>
+        <ShieldSPS size={38} />
+        <div>
+          <div style={{ fontWeight: 700, fontSize: 15, color: '#e8eaf0' }}>GRC SPS</div>
+          <div style={{ fontSize: 10, color: '#555f78' }}>Sistema Preditivo para Seguradoras</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function ShieldSPS({ size = 36 }: { size?: number }) {
   return (
-    <svg width={size} height={Math.round(size * 1.18)} viewBox="0 0 48 56" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 24 1 L 46 10 L 46 30 Q 46 45 24 55 Q 2 45 2 30 L 2 10 Z" fill="#0a1e35" stroke="#0ea5e9" strokeWidth="1.8"/>
-      <path d="M 24 6 L 42 14 L 42 30 Q 42 42 24 51 Q 6 42 6 30 L 6 14 Z" fill="none" stroke="rgba(56,189,248,0.2)" strokeWidth="0.9"/>
-      <rect x="6" y="24" width="36" height="12" fill="rgba(56,189,248,0.07)" rx="2"/>
-      <ellipse cx="24" cy="30" rx="13" ry="7" fill="none" stroke="#38bdf8" strokeWidth="1.6"/>
-      <circle cx="24" cy="30" r="4.5" fill="#0284c7"/>
-      <circle cx="24" cy="30" r="2.2" fill="#7dd3fc"/>
-      <line x1="7"  y1="24" x2="13" y2="24" stroke="rgba(56,189,248,0.55)" strokeWidth="1"/>
-      <line x1="35" y1="24" x2="41" y2="24" stroke="rgba(56,189,248,0.55)" strokeWidth="1"/>
-      <line x1="7"  y1="36" x2="13" y2="36" stroke="rgba(56,189,248,0.55)" strokeWidth="1"/>
-      <line x1="35" y1="36" x2="41" y2="36" stroke="rgba(56,189,248,0.55)" strokeWidth="1"/>
-      <text x="24" y="51" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="800" fontSize="7.5" fill="#38bdf8" letterSpacing="2">SPS</text>
+    <svg width={size} height={size} viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 24 1 L 46 10 L 46 28 Q 46 42 24 47 Q 2 42 2 28 L 2 10 Z" fill="#0a1e35" stroke="#0ea5e9" strokeWidth="1.8"/>
+      <path d="M 24 5 L 42 13 L 42 28 Q 42 40 24 44 Q 6 40 6 28 L 6 13 Z" fill="none" stroke="rgba(56,189,248,0.2)" strokeWidth="0.9"/>
+      <rect x="6" y="20" width="36" height="12" fill="rgba(56,189,248,0.06)" rx="2"/>
+      <ellipse cx="24" cy="26" rx="13" ry="7" fill="none" stroke="#38bdf8" strokeWidth="1.6"/>
+      <circle cx="24" cy="26" r="4.5" fill="#0284c7"/>
+      <circle cx="24" cy="26" r="2.2" fill="#7dd3fc"/>
+      <line x1="7"  y1="20" x2="13" y2="20" stroke="rgba(56,189,248,0.55)" strokeWidth="1"/>
+      <line x1="35" y1="20" x2="41" y2="20" stroke="rgba(56,189,248,0.55)" strokeWidth="1"/>
+      <line x1="7"  y1="32" x2="13" y2="32" stroke="rgba(56,189,248,0.55)" strokeWidth="1"/>
+      <line x1="35" y1="32" x2="41" y2="32" stroke="rgba(56,189,248,0.55)" strokeWidth="1"/>
     </svg>
   )
 }
