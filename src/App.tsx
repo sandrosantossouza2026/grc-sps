@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import TabPreditivo from './components/TabPreditivo'
 import TabMonitoramento from './components/TabMonitoramento'
-import Logo from './components/Logo'
+import Login from './components/Login'
+import LogoIcon, { LogoFull } from './components/Logo'
 
 type Tab = 'preditivo' | 'monitoramento'
 
@@ -11,8 +12,11 @@ const tabs: { id: Tab; label: string; icon: string }[] = [
 ]
 
 export default function App() {
+  const [loggedIn, setLoggedIn] = useState(false)
   const [active, setActive] = useState<Tab>('preditivo')
   const [sidebarOpen, setSidebarOpen] = useState(false)
+
+  if (!loggedIn) return <Login onLogin={() => setLoggedIn(true)} />
 
   const handleNav = (id: Tab) => {
     setActive(id)
@@ -31,14 +35,10 @@ export default function App() {
 
         {/* Logo */}
         <div style={{
-          display: 'flex', alignItems: 'center', gap: 12,
-          padding: '22px 18px 22px', borderBottom: '1px solid var(--border)',
+          padding: '20px 16px 20px',
+          borderBottom: '1px solid var(--border)',
         }}>
-          <Logo size={44} />
-          <div>
-            <div style={{ fontWeight: 700, fontSize: 16, color: 'var(--text)', letterSpacing: '0.02em' }}>GRC SPS</div>
-            <div style={{ fontSize: 11, color: 'var(--text3)', lineHeight: 1.4, marginTop: 2 }}>Sistema Preditivo<br/>para Seguradoras</div>
-          </div>
+          <LogoFull />
         </div>
 
         {/* Nav */}
@@ -68,11 +68,22 @@ export default function App() {
           ))}
         </nav>
 
-        {/* Footer */}
-        <div style={{ padding: '14px 18px', borderTop: '1px solid var(--border)' }}>
+        {/* Footer com logout */}
+        <div style={{ padding: '14px 16px', borderTop: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ fontSize: 10, color: 'var(--text3)' }}>
-            {new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
+            {new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })}
           </div>
+          <button
+            onClick={() => setLoggedIn(false)}
+            title="Sair"
+            style={{
+              background: 'none', border: 'none', cursor: 'pointer',
+              color: 'var(--text3)', fontSize: 11, padding: '4px 6px',
+              borderRadius: 6, transition: 'color 0.15s',
+            }}
+          >
+            Sair
+          </button>
         </div>
       </aside>
 
@@ -91,13 +102,13 @@ export default function App() {
             </svg>
           </button>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <Logo size={26} />
+            <LogoIcon size={26} />
             <span style={{ fontWeight: 700, fontSize: 14, color: 'var(--text)' }}>GRC SPS</span>
           </div>
         </header>
 
         {/* Content */}
-        <main style={{ flex: 1, padding: '20px 20px 48px 8px', overflowX: 'hidden' }}>
+        <main style={{ flex: 1, padding: '20px 20px 48px 16px', overflowX: 'hidden' }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             <div style={{ marginBottom: 22 }}>
               <h1 style={{ fontSize: 17, fontWeight: 600, color: 'var(--text)', marginBottom: 6 }}>
