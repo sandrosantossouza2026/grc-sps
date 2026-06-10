@@ -7,7 +7,7 @@ export function LogoFull() {
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <img src={GRC_LOGO} alt="GRC Solutions" style={{ height: 38, width: 'auto' }} />
       <div style={{ width: 1, height: 34, background: 'rgba(255,255,255,0.3)' }} />
-      <ShieldSPS size=36 />
+      <ShieldSPS size={36} />
     </div>
   )
 }
