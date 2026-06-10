@@ -31,46 +31,46 @@ export default function App() {
 
         {/* Logo */}
         <div style={{
-          display: 'flex', alignItems: 'center', gap: 10,
-          padding: '18px 14px 20px', borderBottom: '1px solid var(--border)',
+          display: 'flex', alignItems: 'center', gap: 12,
+          padding: '22px 18px 22px', borderBottom: '1px solid var(--border)',
         }}>
-          <Logo size={36} />
+          <Logo size={44} />
           <div>
-            <div style={{ fontWeight: 700, fontSize: 13, color: 'var(--text)', letterSpacing: '0.02em' }}>GRC SPS</div>
-            <div style={{ fontSize: 9, color: 'var(--text3)', lineHeight: 1.4, marginTop: 1 }}>Sistema Preditivo<br/>para Seguradoras</div>
+            <div style={{ fontWeight: 700, fontSize: 16, color: 'var(--text)', letterSpacing: '0.02em' }}>GRC SPS</div>
+            <div style={{ fontSize: 11, color: 'var(--text3)', lineHeight: 1.4, marginTop: 2 }}>Sistema Preditivo<br/>para Seguradoras</div>
           </div>
         </div>
 
         {/* Nav */}
-        <nav style={{ padding: '14px 8px', flex: 1 }}>
-          <div style={{ fontSize: 9, color: 'var(--text3)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.07em', padding: '0 8px', marginBottom: 8 }}>Módulos</div>
+        <nav style={{ padding: '18px 10px', flex: 1 }}>
+          <div style={{ fontSize: 10, color: 'var(--text3)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.07em', padding: '0 10px', marginBottom: 10 }}>Módulos</div>
           {tabs.map(t => (
             <button
               key={t.id}
               onClick={() => handleNav(t.id)}
               style={{
-                display: 'flex', alignItems: 'center', gap: 9,
-                width: '100%', padding: '9px 10px', marginBottom: 2,
-                borderRadius: 8, border: 'none', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', gap: 10,
+                width: '100%', padding: '11px 12px', marginBottom: 4,
+                borderRadius: 10, border: 'none', cursor: 'pointer',
                 background: active === t.id ? 'var(--blue-dim)' : 'transparent',
                 color: active === t.id ? 'var(--blue)' : 'var(--text2)',
                 fontWeight: active === t.id ? 600 : 400,
-                fontSize: 12, textAlign: 'left',
+                fontSize: 13, textAlign: 'left',
                 transition: 'background 0.15s, color 0.15s',
               }}
             >
-              <span style={{ fontSize: 14, width: 18, textAlign: 'center', flexShrink: 0 }}>{t.icon}</span>
+              <span style={{ fontSize: 16, width: 20, textAlign: 'center', flexShrink: 0 }}>{t.icon}</span>
               <span style={{ flex: 1 }}>{t.label}</span>
               {active === t.id && (
-                <span style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--blue)', flexShrink: 0 }} />
+                <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--blue)', flexShrink: 0 }} />
               )}
             </button>
           ))}
         </nav>
 
         {/* Footer */}
-        <div style={{ padding: '12px 14px', borderTop: '1px solid var(--border)' }}>
-          <div style={{ fontSize: 9, color: 'var(--text3)' }}>
+        <div style={{ padding: '14px 18px', borderTop: '1px solid var(--border)' }}>
+          <div style={{ fontSize: 10, color: 'var(--text3)' }}>
             {new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
           </div>
         </div>
@@ -91,13 +91,13 @@ export default function App() {
             </svg>
           </button>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <Logo size={24} />
-            <span style={{ fontWeight: 700, fontSize: 13, color: 'var(--text)' }}>GRC SPS</span>
+            <Logo size={26} />
+            <span style={{ fontWeight: 700, fontSize: 14, color: 'var(--text)' }}>GRC SPS</span>
           </div>
         </header>
 
         {/* Content */}
-        <main style={{ flex: 1, padding: '20px 16px 48px', overflowX: 'hidden' }}>
+        <main style={{ flex: 1, padding: '20px 20px 48px 8px', overflowX: 'hidden' }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             <div style={{ marginBottom: 22 }}>
               <h1 style={{ fontSize: 17, fontWeight: 600, color: 'var(--text)', marginBottom: 6 }}>
