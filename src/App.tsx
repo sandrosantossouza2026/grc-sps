@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import TabPreditivo from './components/TabPreditivo'
 import TabMonitoramento from './components/TabMonitoramento'
 import Login from './components/Login'
-import LogoIcon, { LogoFull } from './components/Logo'
+import { LogoFull, ShieldSPS } from './components/Logo'
 
 type Tab = 'preditivo' | 'monitoramento'
 
@@ -34,10 +34,7 @@ export default function App() {
       <aside className={`sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}>
 
         {/* Logo */}
-        <div style={{
-          padding: '20px 16px 20px',
-          borderBottom: '1px solid var(--border)',
-        }}>
+        <div style={{ padding: '18px 16px 18px', borderBottom: '1px solid var(--border)' }}>
           <LogoFull />
         </div>
 
@@ -68,20 +65,12 @@ export default function App() {
           ))}
         </nav>
 
-        {/* Footer com logout */}
+        {/* Footer */}
         <div style={{ padding: '14px 16px', borderTop: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ fontSize: 10, color: 'var(--text3)' }}>
             {new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })}
           </div>
-          <button
-            onClick={() => setLoggedIn(false)}
-            title="Sair"
-            style={{
-              background: 'none', border: 'none', cursor: 'pointer',
-              color: 'var(--text3)', fontSize: 11, padding: '4px 6px',
-              borderRadius: 6, transition: 'color 0.15s',
-            }}
-          >
+          <button onClick={() => setLoggedIn(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text3)', fontSize: 11, padding: '4px 6px', borderRadius: 6 }}>
             Sair
           </button>
         </div>
@@ -92,17 +81,13 @@ export default function App() {
 
         {/* Topbar mobile */}
         <header className="topbar">
-          <button
-            onClick={() => setSidebarOpen(o => !o)}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text)', padding: 8, borderRadius: 6, display: 'flex', alignItems: 'center' }}
-            aria-label="Menu"
-          >
+          <button onClick={() => setSidebarOpen(o => !o)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text)', padding: 8, borderRadius: 6, display: 'flex', alignItems: 'center' }} aria-label="Menu">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
             </svg>
           </button>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <LogoIcon size={26} />
+            <ShieldSPS size={28} />
             <span style={{ fontWeight: 700, fontSize: 14, color: 'var(--text)' }}>GRC SPS</span>
           </div>
         </header>
